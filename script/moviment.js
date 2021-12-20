@@ -11,7 +11,7 @@ document.body.addEventListener('keydown', ()=> {
   var direita = 39
   var baixo = 40
 
-  if(event.keyCode == direita) {
+    if(event.keyCode == direita) {
     dd++
     ps.style.marginLeft = `${dd}px` 
   }
