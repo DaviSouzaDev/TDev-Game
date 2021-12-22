@@ -49,9 +49,13 @@ function Vida() {
   }
 }
 
+
+//SetInterval
 setInterval(Verificacao, 10)
 setInterval(Vida, 10)
 
+
+//AddEventListener
 btrs.addEventListener('click', ()=> {
   location.reload()
 })

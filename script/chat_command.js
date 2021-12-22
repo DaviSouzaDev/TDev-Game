@@ -2,7 +2,7 @@ var chat = document.querySelector('#chat_command')
 
 
 chat.addEventListener('input', ()=> {
-    var cv = chat.value
+    let cv = chat.value
 
     if(cv == '/game background color = gray') {
     document.body.style.background = 'rgb(36,36,36)'
@@ -18,7 +18,7 @@ chat.addEventListener('input', ()=> {
 
 
 chat.addEventListener('input', ()=> {
-  var cv = chat.value
+  let cv = chat.value
 
   if(cv == '/game $me respawn') {
     ps.style.marginLeft = '0px'
@@ -33,11 +33,11 @@ chat.addEventListener('input', ()=> {
 
 
 chat.addEventListener('input', ()=> {
-  var cv = chat.value
+  let cv = chat.value
 
   if(cv == '/admin $me cheat = god; status = true') {
     ps.classList.add('god-mode')
-  } else if(cv == '/admin $me mode = god; status = false') {
+  } else if(cv == '/admin $me cheat = god; status = false') {
     ps.classList.remove('god-mode')
   } 
 }) // GOD-MODE
@@ -47,7 +47,7 @@ chat.addEventListener('input', ()=> {
 
 
 chat.addEventListener('input', ()=> {
-  var cv = chat.value
+  let cv = chat.value
 
   if(cv == '/skin $me name = goku') {
     document.querySelector('#skin_naruto').classList.add('displaynone')
@@ -55,7 +55,7 @@ chat.addEventListener('input', ()=> {
     document.querySelector('#skin_goku').classList.remove('displaynone')
 
     document.querySelector('#skin_mario').classList.add('displaynone')
-  } else if(cv == '/skin $me name = naruto') {
+  } else if(cv == '/skin $me name = naruto' || '/skin $me name = default') {
     document.querySelector('#skin_naruto').classList.remove('displaynone')
 
     document.querySelector('#skin_goku').classList.add('displaynone')
@@ -75,9 +75,31 @@ chat.addEventListener('input', ()=> {
 
 
 chat.addEventListener('input', ()=> {
-  cv = chat.value
+  let cv = chat.value
 
   if(cv == '/admin $me cheat = setLife') {
     bt=3
   }  
+}) // Set Life
+
+
+//---------------------------
+
+chat.addEventListener('input', ()=> {
+  let cv = chat.value
+
+  if(cv == '/admin respawnItem name = sword') {
+    item_sword.style.marginLeft=`${LocalSpawnItemLeft()}px`
+    item_sword.style.marginTop=`${LocalSpawnItemTop()}px`
+
+    console.log(LocalSpawnItemTop())
+  }
+})
+
+chat.addEventListener('input', ()=> {
+  let cv = chat.value
+
+  if(cv == '/admin removeItem name = sword'){
+    item_sword.style.display = 'none'
+  }
 })
